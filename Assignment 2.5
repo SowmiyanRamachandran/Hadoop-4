@@ -1,0 +1,41 @@
+Assignment 2.5
+
+What is cluster?
+
+In general,cluster is group of similar things or any others positioned or occurring closely together.
+A computer cluster consists of a set of connected computers that work together so that they can be viewed as a single system.
+Unlike grid computers, computer clusters have each node set to perform the same task and they are controlled and scheduled by software.
+
+Hadoop Cluster : A Hadoop cluster is a special type of computational cluster designed specifically for storing and processing huge volumes
+of unstructured data in a distributed computing environment.It is especially designed for cost-effective operation and reduce time consumption.
+Hadoop clusters are known for boosting the speed of data analysis applications.There is no resource shared between the system,only common 
+thing between all is 'Network'.It is highly scalable.Hadoop clusters also are highly resistant to failure because each piece of data is copied onto
+other cluster nodes, which ensures that the data is not lost if one node fails.
+
+Advantage :
+1.Scalability
+2.Cost-effective
+3.Parallel Processing
+4.Resilient to failure 
+
+In spite of their many benefits, Hadoop clusters are not a good solution for every organization's data analysis needs.
+An organization with relatively little data, for example, might not benefit from a Hadoop cluster even if that data required intense analysis
+
+What is Rack?
+-Storage of Nodes is called as rack.
+-A Hadoop Cluster is a collection of racks.
+-A rack is a collection of 30 or 40 nodes that are physically stored close together and are all connected to the same network switch.
+-Network bandwidth between any two nodes in rack is greater than bandwidth between two nodes on different racks.
+-Communication between two data nodes on the same rack is efficient than the same between two nodes on different racks.
+-In large clusters of hadoop,in order to improve network traffic while reading/writing HDFS files,
+NameNode chooses data nodes which areon the same rack or a near by rack to read/write request(Client mode)
+-NameNode achieves this rack information by maintaining rack ids of each data node.This concept of choosing closer data nodes
+based on the racks information is called RACK AWARENESS in Hadoop.
+-A default hadoop installation assumes all nodes belong to same rack.
+
+Rack awareness is having the knowledge of Cluster topology or more specifically how the different data nodes are distributed across the
+racks of a Hadoop cluster. The importance of this knowledge relies on this assumption that collocated data nodes inside a specific rack
+will have more bandwidth and less latency whereas two data nodes in separate racks will have comparatively less bandwidth and higher latency.
+The main purpose of Rack awareness is:
+Increasing the availability of data block. Better cluster performance. In simple words rack awareness is the strategy namenode employs
+to choose the nearest datanode based on rack information. 
